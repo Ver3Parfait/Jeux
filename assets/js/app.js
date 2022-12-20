@@ -78,7 +78,8 @@ const CreateBoard = () => {
 };
 
 function changeColor() {
-    
+    score = 0
+    scoreShow.textContent = score
     minutes = 0;
     time.innerHTML = 0;
     board.innerHTML = ''
@@ -139,6 +140,8 @@ function reload() {
         bestcoreShow.textContent = bestcore
         scoreShow.textContent = score
       }
+      score = 0
+      scoreShow.textContent = score
 }
 
 
