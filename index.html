@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Jeux du carré</h1>
+        <ul>
+          <li onclick="">
+            <div style="cursor:pointer;color: crimson;" onclick="reload()">Recommencer</div>
+          </li>
+          <li>
+            <p>Temps restant :<span id="time"> 0</span> secondes</p>
+          </li>
+          <li>
+            <p>Best score :<span id="bestScore"> 0</span></p>
+          </li>
+          <li>
+            <p>Score :<span id="score"> 0</span></p>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="button">
+        <select style="cursor:pointer;" name="squareNumbers" class="squareNumbersDificulty">
+          <option value="">Selectionner le nombre de carrer</option>
+          <option  value="3">3</option>
+          <option  value="4">4</option>
+          <option  value="5">5</option>
+          <option  value="6">6</option>
+          <option  value="7">7</option>
+          <option  value="8">8</option>
+          <option  value="9">9</option>
+          <option  value="10">10</option>
+        </select>
+        <select style="cursor:pointer;" name="Dificulty" class="Dificulty">
+          <option value="">Selectionner une difficultée</option>
+          <option  value="2">Paisible</option>
+          <option  value="1">Facile</option>
+          <option  value="0.5">Normal</option>
+          <option  value="0.3">Difficile</option>
+          <option  value="0.2">Hardcore</option>
+        </select>
+        <button style="cursor:pointer;" id="start" onclick="changeColor()">Start</button>
+      </div>
+      <section id="board">
+        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+          <h2 style="margin: 20px;">Bienvenue les copains !</h2>
+          <img style="border:2px solid white;" src="/assets/images/illus1-blog-1024x700.jpg" alt="">
+        </div>
+      </section>
+    </main>
+    <footer>
+      
+    </footer>
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>
