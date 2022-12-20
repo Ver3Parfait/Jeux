@@ -61,6 +61,7 @@ function stopInterval() {
 
 const CreateBoard = () => {
     randomColor()
+    stopInterval()
   for (let i = 0; i < squareNumbers; i++) {
     square = document.createElement("div");
     square.setAttribute("class", "square");
@@ -69,12 +70,15 @@ const CreateBoard = () => {
     board.appendChild(square);
   }
   minutes = document.querySelector('.Dificulty').value;
-  seconde = minutes * 60;
- interval = setInterval(timer, 1000)
+  if (minutes != 'none') {
+    seconde = minutes * 60;
+   interval = setInterval(timer, 1000)
+  }
+
 };
 
 function changeColor() {
-
+    
     minutes = 0;
     time.innerHTML = 0;
     board.innerHTML = ''
@@ -85,13 +89,18 @@ function changeColor() {
         scoreShow.textContent = score
       }
     squareNumbers = document.querySelector(".squareNumbersDificulty").value;
-    CreateBoard();
+    if (squareNumbers != 'none') {
+        CreateBoard()
+    }else if (squareNumbers == 'none'){
+        alert("Choisis un nombre de carrés")
+    }
     randomColor2();
     random = Math.floor(Math.random() * squareNumbers);
   tableBoard = [...document.getElementsByClassName("square")];
   tableBoard[random].setAttribute('style', `background-color:${color2};`)
   tableBoard[random].setAttribute('id', 'colorFound');
-  
+  color = '#';
+  color2 = '#';
 }
 
 function select(elem) {
@@ -117,16 +126,13 @@ randomColor2()
 }
 
 function reload() {
+    tableBoard = [...document.getElementsByClassName("square")];
+    color = '#';
+    color2 = '#';
     seconde = 0;
     time.innerHTML = 0;
     stopInterval()
-    board.innerHTML = ''
-    for (let i = 0; i < squareNumbers; i++) {
-        square = document.createElement("div");
-        square.setAttribute("class", "square");
-        square.setAttribute("onclick", "select(this)");
-        board.appendChild(square);
-      }
+    board.innerHTML = 'Appuie sur start quand tu voudras recommencer !'
       if (score >= bestcore) {
         bestcore = score
         score = 0
