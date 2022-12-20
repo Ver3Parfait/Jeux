@@ -78,6 +78,8 @@ const CreateBoard = () => {
 };
 
 function changeColor() {
+    score = 0
+    scoreShow.textContent = score
     minutes = 0;
     time.innerHTML = 0;
     board.innerHTML = ''
@@ -100,8 +102,6 @@ function changeColor() {
   tableBoard[random].setAttribute('id', 'colorFound');
   color = '#';
   color2 = '#';
-  score = 0
-  scoreShow.textContent = score
 }
 
 function select(elem) {
