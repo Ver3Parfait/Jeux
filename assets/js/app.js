@@ -91,6 +91,9 @@ function changeColor() {
       }
     squareNumbers = document.querySelector(".squareNumbersDificulty").value;
     if (squareNumbers != 'none') {
+        if (squareNumbers == 'random'){
+            squareNumbers = Math.floor((Math.random() * 7) + 3)
+        }
         CreateBoard()
     }else if (squareNumbers == 'none'){
         alert("Choisis un nombre de carrés")
